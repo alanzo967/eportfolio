@@ -1,0 +1,87 @@
+/*
+	custom.css: light academic theme for the Forty template.
+	Loaded after main.css, so every rule here overrides the dark theme.
+	Change the three colours below to restyle the whole site.
+*/
+:root {
+	--ink: #1c1c1c;          /* main text */
+	--muted: #5a5a5a;        /* secondary text */
+	--rule: #dcdcdc;         /* lines and borders */
+	--paper: #ffffff;        /* page background */
+	--panel: #f6f6f4;        /* light grey panels */
+	--accent: #7a2e2e;       /* links and highlights (deep red) */
+}
+
+/* Base */
+body { background: var(--paper); }
+body, input, select, textarea { color: var(--ink); font-weight: 400; }
+h1, h2, h3, h4, h5, h6, strong, b, label, table th { color: var(--ink); }
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
+a { color: var(--accent); border-bottom-color: rgba(122, 46, 46, 0.35); }
+a:hover { color: var(--ink) !important; }
+a:active { color: var(--ink) !important; }
+header.major > :first-child:after { background-color: var(--accent); }
+hr, blockquote, .box, ul.alt li { border-color: var(--rule); }
+code { background: var(--panel); }
+
+/* Header bar */
+#header, #header.alt { background-color: var(--paper); box-shadow: 0 1px 0 var(--rule); }
+#header .logo, #header nav a { color: var(--ink); }
+#header .logo strong { background-color: var(--ink); color: var(--paper); }
+#header .logo:hover strong, #header .logo:active strong { background-color: var(--accent); }
+
+/* Slide-out menu */
+#menu { background: rgba(255, 255, 255, 0.97); }
+#menu, #menu a { color: var(--ink); }
+#menu ul.links > li > a:not(.button) { border-top-color: var(--rule); }
+#menu .close { color: var(--ink); }
+
+/* Banner */
+#banner { color: var(--ink); }
+#banner:after { background-color: var(--paper); opacity: 0.9; }
+#banner h1, #banner p { color: var(--ink); }
+
+/* Main area */
+#main { background-color: var(--paper); }
+#main > * { border-top-color: var(--rule); }
+#main.alt { border-bottom-color: var(--rule); }
+
+/* Module tiles: one neutral overlay instead of six colours */
+.tiles article:before { background-color: #2b2b2b !important; opacity: 0.82; }
+.tiles article:after { background-color: transparent; }
+.tiles article, .tiles article h3, .tiles article p, .tiles article a { color: #ffffff; }
+.tiles article .image img { filter: grayscale(100%); }
+
+/* Tables */
+table tbody tr { border-color: var(--rule); }
+table tbody tr:nth-child(2n + 1) { background-color: var(--panel); }
+table thead, table tfoot { border-color: var(--ink); }
+table.alt tbody tr td { border-color: var(--rule); }
+
+/* Buttons */
+.button, input[type="submit"], input[type="reset"], input[type="button"], button {
+	box-shadow: inset 0 0 0 2px var(--ink); color: var(--ink) !important;
+}
+.button:hover, button:hover { box-shadow: inset 0 0 0 2px var(--accent); color: var(--accent) !important; }
+.button.primary { background-color: var(--ink); color: var(--paper) !important; box-shadow: none; }
+.button.primary:hover { background-color: var(--accent); color: var(--paper) !important; }
+
+/* Contact and footer */
+#contact { border-bottom-color: var(--rule); background: var(--panel); }
+#contact > .inner > :nth-child(2n - 1) { border-right-color: var(--rule); }
+#contact > .inner > .split > *:before { border-top-color: var(--rule); }
+.icon.alt:before { background-color: var(--ink); color: var(--paper); }
+a.icon.alt:hover:before { background-color: var(--accent); }
+#footer .copyright li { color: var(--muted); border-left-color: var(--rule); }
+
+/* Small helpers used on module pages */
+.status-note { background: var(--panel); border-left: 4px solid var(--accent); padding: 1em 1.25em; margin-bottom: 2em; }
+.lo-ref { color: var(--muted); font-size: 0.85em; }
+
+/* Icons redrawn in dark ink (originals are white lines) */
+input[type="submit"].next:before, input[type="reset"].next:before, input[type="button"].next:before, button.next:before, .button.next:before { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36px' height='24px' viewBox='0 0 36 24'%3E%3Cstyle%3Eline %7B stroke: %231c1c1c%3B stroke-width: 2px%3B %7D%3C/style%3E%3Cline x1='0' y1='12' x2='34' y2='12' /%3E%3Cline x1='25' y1='4' x2='34' y2='12.5' /%3E%3Cline x1='25' y1='20' x2='34' y2='11.5' /%3E%3C/svg%3E"); }
+input[type="submit"].next:after, input[type="reset"].next:after, input[type="button"].next:after, button.next:after, .button.next:after { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36px' height='24px' viewBox='0 0 36 24'%3E%3Cstyle%3Eline %7B stroke: %237a2e2e%3B stroke-width: 2px%3B %7D%3C/style%3E%3Cline x1='0' y1='12' x2='34' y2='12' /%3E%3Cline x1='25' y1='4' x2='34' y2='12.5' /%3E%3Cline x1='25' y1='20' x2='34' y2='11.5' /%3E%3C/svg%3E"); }
+#header nav a[href="#menu"]:before, #header nav a[href="#menu"]:after { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %231c1c1c%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E"); }
+#header nav a[href="#menu"]:after { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %237a2e2e%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E"); }
+#menu .close:before { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' viewBox='0 0 20 20'%3E%3Cstyle%3Eline %7B stroke: %231c1c1c%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E"); }
+#menu .close:after { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' viewBox='0 0 20 20'%3E%3Cstyle%3Eline %7B stroke: %237a2e2e%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E"); }
